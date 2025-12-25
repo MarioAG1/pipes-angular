@@ -21,3 +21,54 @@
     <div class="stat-desc">Original: {{ fullName() }}</div>
   </div>
 </div>
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ customDate() | date }}</div>
+    <div class="stat-desc">Original: {{ customDate() }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-title">Date|short|GMT+1</div>
+    <div class="stat-value">{{ customDate() | date : 'short' : 'GMT+1' }}</div>
+    <div class="stat-desc">Original: {{ customDate() }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-title">Date|medium|GMT+1</div>
+    <div class="stat-value">{{ customDate() | date : 'medium' : 'GMT+1' }}</div>
+    <div class="stat-desc">Original: {{ customDate() }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-title">Date|long|GMT+1</div>
+    <div class="stat-value">{{ customDate() | date : 'long' : 'GMT+1' }}</div>
+    <div class="stat-desc">Original: {{ customDate() }}</div>
+  </div>
+</div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date 'yyyy MM'</div>
+    <div class="stat-value">{{ customDate() | date : 'yyyy MM' }}</div>
+    <div class="stat-desc">Original: {{ customDate() }}</div>
+  </div>
+</div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date 'dd/MM/yyyy'</div>
+    <div class="stat-value">{{ customDate() | date : 'dd/MM/yyyy' }}</div>
+    <div class="stat-desc">Original: {{ customDate() }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-title">Date 'HH/mm/ss'</div>
+    <div class="stat-value">{{ customDate() | date : 'HH:mm:ss' }}</div>
+    <div class="stat-desc">Original: {{ customDate() }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-title">Date 'EEEE D, MMMM'</div>
+    <div class="stat-value">{{ customDate() | date : 'EEEE d, MMMM' }}</div>
+    <div class="stat-desc">Original: {{ customDate() }}</div>
+  </div>
+</div>
