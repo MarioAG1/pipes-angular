@@ -9,7 +9,13 @@ export class LocalService {
   private currentLocate = signal<AvaiableLocale>('fr');
 
   constructor() {
-    this.currentLocate.set((localStorage.getItem('locale') as AvaiableLocale) ?? 'es');
+    const saved = localStorage.getItem('locale');
+
+    if (saved === 'es' || saved === 'fr' || saved === 'en') {
+      this.currentLocate.set(saved);
+    } else {
+      this.currentLocate.set('es');
+    }
   }
 
   get getLocale() {
