@@ -22,6 +22,11 @@ export class LocalService {
     return this.currentLocate();
   }
 
+  // Para que en vez de utilizar una señal le pasemos directamente desde el servicio
+  get getLocalefromService() {
+    return this.currentLocate;
+  }
+
   changeLocale(local: AvaiableLocale) {
     localStorage.setItem('locale', local);
     this.currentLocate.set(local);

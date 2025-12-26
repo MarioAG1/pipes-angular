@@ -11,7 +11,8 @@ export default class BasicPageComponent {
   localService = inject(LocalService);
 
   //Se debe de tomar el LOCAL del servicio, pero esta es otra manera
-  currentLocale = signal(inject(LOCALE_ID));
+  // currentLocale = signal(inject(LOCALE_ID));
+  currentLocaleService = this.localService.getLocalefromService;
 
   nameLower = signal('mario');
   nameUpper = signal('MARIO');
