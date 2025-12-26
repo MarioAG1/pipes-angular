@@ -78,11 +78,17 @@
 <div class="flex flex-row items-center">
   <div class="basis-1/3 flex justify-start items-center gap-2">
     <h1 class="text-2xl font-bold">Localizacion Actual</h1>
-    <span class="badge badge-secondary font-bold text-white">ES</span>
+    <span class="badge badge-secondary font-bold text-white">{{ currentLocale() }}</span>
   </div>
   <div class="basis-2/3 flex justify-end items-center gap-2">
-    <button class="btn btn-primary text-white">Changer en français</button>
-    <button class="btn btn-primary text-white">Change to english</button>
-    <button class="btn btn-primary text-white">Cambiar a español</button>
+    <button (click)="changeLocal('fr')" class="btn btn-primary text-white">
+      Changer en français
+    </button>
+    <button (click)="changeLocal('en')" class="btn btn-primary text-white">
+      Change to english
+    </button>
+    <button (click)="changeLocal('es')" class="btn btn-primary text-white">
+      Cambiar a español
+    </button>
   </div>
 </div>
