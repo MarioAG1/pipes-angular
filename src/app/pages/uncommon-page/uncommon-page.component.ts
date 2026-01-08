@@ -11,6 +11,7 @@ import {
   TitleCasePipe,
   UpperCasePipe,
 } from '@angular/common';
+import { interval, map, tap } from 'rxjs';
 
 const client1: Cliente = {
   name: 'Fernando',
@@ -90,4 +91,10 @@ export default class UncommonPageComponent {
       console.log('Promesa finalizada');
     }, 3500);
   });
+
+  //Async Observable Pipe
+  myObservableTimer = interval(2000).pipe(
+    map((value) => value + 1),
+    tap((value) => console.log('tap', value))
+  );
 }
