@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { CardComponent } from '../../components/card/card.component';
 import { Cliente } from '../../interfaces/cliente.interface';
 import {
+  AsyncPipe,
   I18nPluralPipe,
   I18nSelectPipe,
   JsonPipe,
@@ -28,6 +29,7 @@ const client2: Cliente = {
 @Component({
   selector: 'app-uncommon-page',
   imports: [
+    AsyncPipe,
     CardComponent,
     I18nSelectPipe,
     I18nPluralPipe,
@@ -79,4 +81,13 @@ export default class UncommonPageComponent {
     age: 36,
     address: 'Ottawa, Canada',
   };
+
+  //Async Pipe
+  promiseValue: Promise<string> = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Tenemos data de la promesa');
+      reject('Se ha denegado');
+      console.log('Promesa finalizada');
+    }, 3500);
+  });
 }
