@@ -5,8 +5,8 @@
 <div class="stats shadow">
   <div class="stat">
     <div class="stat-title">ToggleCase Pipe</div>
-    <div class="stat-value">{{ name() | toggleCase : false }}</div>
+    <div class="stat-value">{{ name() | toggleCase : uppercase() }}</div>
     <div class="stat-desc">{{ name() }}</div>
-    <button class="btn btn-primary">ToggleCase</button>
+    <button (click)="changeCase()" class="btn btn-primary">ToggleCase</button>
   </div>
 </div>
