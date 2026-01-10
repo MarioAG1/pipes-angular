@@ -1,3 +1,4 @@
+import { Hero } from './../../interfaces/hero.interface';
 import { Component, signal } from '@angular/core';
 import { ToggleCasePipe } from '../../pipes/toggle-case.pipe';
 import { heroes } from '../../data/heroes.data';
@@ -7,6 +8,7 @@ import { HeroTextColorPipe } from '../../pipes/hero-text-color.pipe';
 import { TitleCasePipe } from '@angular/common';
 import { HeroCreatorPipe } from '../../pipes/hero-creator.pipe';
 import { Creator } from '../../interfaces/hero.interface';
+import { HeroSortByPipe } from '../../pipes/hero-sort-by.pipe';
 
 @Component({
   selector: 'app-custom-page',
@@ -17,6 +19,7 @@ import { Creator } from '../../interfaces/hero.interface';
     HeroTextColorPipe,
     TitleCasePipe,
     HeroCreatorPipe,
+    HeroSortByPipe,
   ],
   templateUrl: './custom-page.component.html',
 })
@@ -25,6 +28,7 @@ export default class CustomPageComponent {
   uppercase = signal<boolean>(true);
   heroes = signal(heroes);
   DC = Creator.DC;
+  sortBy = signal<keyof Hero | null>(null);
 
   changeCase() {
     if (this.uppercase() === true) {
