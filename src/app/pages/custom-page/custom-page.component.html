@@ -52,11 +52,18 @@
           </span>
         </td>
         <td>
-          <span class="text-xs w-44" [style.color]="hero.color | heroColor">
-            {{ hero.color | heroColor }}
+          <span class="text-xs w-44" [style.color]="hero.color | heroTextColor">
+            {{ hero.color | heroColor | titlecase }}
           </span>
         </td>
-        <td>{{ hero.creator }}</td>
+        <td>
+          <!-- Se puede con numeros por la enumeracion y tambien texto -->
+          <span
+            [class.text-primary]="hero.creator === DC"
+            [class.text-accent]="hero.creator === 1"
+            >{{ hero.creator | heroCreator | titlecase }}</span
+          >
+        </td>
       </tr>
       }
     </tbody>
